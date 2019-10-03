@@ -18,6 +18,8 @@ RUN bash -c "source $HOME/.sdkman/bin/sdkman-init.sh \
     && sdk install gradle"
 USER root
 RUN yarn global add @vue/cli
+RUN apt install vim -y
 USER devuser
 WORKDIR /home/devuser
 RUN mkdir ~/.gradle
+EXPOSE 8000
